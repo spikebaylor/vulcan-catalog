@@ -1,0 +1,24 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: grafana
+  namespace: telemetry
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana-main
+    app.kubernetes.io/version: "9.1.5"
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: grafana
+rules:
+# Needed for the dashboard loader to listen for config maps to load new dashboards.
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  verbs:
+  - get
+  - watch
+  - list
+

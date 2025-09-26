@@ -1,0 +1,25 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/instance: main
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: prometheus
+  name: prometheus-main
+  namespace: telemetry
+spec:
+  jobLabel: app.kubernetes.io/name
+  endpoints:
+  - port: web
+    path: /metrics
+    interval: 30s
+  - port: reloader-web
+    path: /metrics
+    interval: 30s
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: prometheus
+      app.kubernetes.io/instance: main
+      app.kubernetes.io/component: server
+      app.kubernetes.io/part-of: prometheus

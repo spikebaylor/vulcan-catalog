@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- configmap.env.yaml
+- deployment.nessie.yaml
+- service.nessie.yaml
+- service.nessie-mgmt.yaml
+- serviceaccount.nessie.yaml
+- ingress.nessie.yaml

@@ -1,0 +1,65 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+generatorOptions:
+  labels:
+    grafana_dashboard: "1"
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: kubernetes-views-apiserver
+  namespace: telemetry
+  files:
+  - kubernetes_views_apiserver.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: kubernetes-views-global
+  namespace: telemetry
+  files:
+    - kubernetes_views_global.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: kubernetes-views-namespaces
+  namespace: telemetry
+  files:
+    - kubernetes_views_namespaces.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: kubernetes-views-nodes
+  namespace: telemetry
+  files:
+    - kubernetes_views_nodes.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: kubernetes-views-pods
+  namespace: telemetry
+  files:
+    - kubernetes_views_pods.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: prometheus
+  namespace: telemetry
+  files:
+    - prometheus.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/
+
+- name: metrics-collector
+  namespace: telemetry
+  files:
+    - metrics-collector.json
+  options:
+    annotations:
+      k8s-sidecar-target-directory: local-kube/

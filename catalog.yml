@@ -1,0 +1,39 @@
+name: vulcan-catalog
+components:
+  - name: grafana
+    description: |
+      Grafana is an open-source visualization and analytics platform for monitoring time-series data from sources like 
+      Prometheus, InfluxDB, and Elasticsearch. It enables users to create interactive dashboards and alerts for observing 
+      system and application metrics.
+    type: git
+    git:
+      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      path: grafana
+  - name: nginx
+    description: |
+      NGINX Ingress Controller
+    type: git
+    git:
+      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      path: nginx
+  - name: minio
+    description: |
+      Minio Operator
+    type: git
+    git:
+      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      path: minio
+  - name: cnpg
+    description: |
+      CNPG Operator
+    type: git
+    git:
+      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      path: cnpg
+  - name: prometheus
+    description: |
+      Prometheus operator, instance and node exporter.
+    type: git
+    git:
+      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      path: prometheus

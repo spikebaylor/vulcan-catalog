@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-env
+  namespace: telemetry
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana-main
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: grafana
+data:
+  GF_PATHS_PROVISIONING: /etc/grafana/provisioning
+  GF_PATHS_DATA: /var/lib/grafana/data
+  GF_PATHS_LOGS: /var/log/grafana
+  GF_PATHS_PLUGINS: /var/lib/grafana/plugins
+  GF_LOG_MODE: console

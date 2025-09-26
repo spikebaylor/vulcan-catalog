@@ -1,0 +1,8 @@
+name: CNPG
+description: |
+  CNPG (Cloud Native Postgres) Operator
+images:
+  - ghcr.io/cloudnative-pg/cloudnative-pg:1.27.0
+scripts:
+  server-side: true
+  post-install: wait.sh

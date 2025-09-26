@@ -1,0 +1,7 @@
+name: Grafana
+description: |
+  Grafana is an open-source visualization and analytics platform for monitoring time-series data from sources like 
+  Prometheus, InfluxDB, and Elasticsearch. It enables users to create interactive dashboards and alerts for observing 
+  system and application metrics.
+images:
+  - grafana/grafana:10.4.5

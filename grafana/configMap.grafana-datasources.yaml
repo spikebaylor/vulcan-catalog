@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: telemetry
+  labels:
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/instance: grafana-main
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: grafana
+    grafana_datasource: "1"
+data:
+  grafana-datasources.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: prometheus-main
+      type: prometheus
+      access: Server
+      url: http://prometheus-main:9090
+      version: 1
+      editable: false

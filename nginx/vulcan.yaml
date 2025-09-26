@@ -1,0 +1,8 @@
+name: Nginx
+description: |
+  NGINX Ingress Controller
+images:
+  - registry.k8s.io/ingress-nginx/controller:v1.11.8
+  - registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.4
+scripts:
+  post-install: wait.sh
