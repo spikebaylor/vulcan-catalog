@@ -8,6 +8,7 @@ components:
     type: git
     git:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
+      branch: main
       path: grafana
   - name: nginx
     description: |
@@ -15,6 +16,7 @@ components:
     type: git
     git:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
+      branch: main
       path: nginx
   - name: minio
     description: |
@@ -22,6 +24,7 @@ components:
     type: git
     git:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
+      branch: main
       path: minio
   - name: cnpg
     description: |
@@ -29,6 +32,7 @@ components:
     type: git
     git:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
+      branch: main
       path: cnpg
   - name: prometheus
     description: |
@@ -36,4 +40,5 @@ components:
     type: git
     git:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
+      branch: main
       path: prometheus
