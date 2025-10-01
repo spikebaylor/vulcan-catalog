@@ -6,7 +6,7 @@ components:
       Prometheus, InfluxDB, and Elasticsearch. It enables users to create interactive dashboards and alerts for observing 
       system and application metrics.
     type: git
-    git:
+    attributes:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
       branch: main
       path: grafana
@@ -14,7 +14,7 @@ components:
     description: |
       NGINX Ingress Controller
     type: git
-    git:
+    attributes:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
       branch: main
       path: nginx
@@ -22,7 +22,7 @@ components:
     description: |
       Minio Operator
     type: git
-    git:
+    attributes:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
       branch: main
       path: minio
@@ -30,7 +30,7 @@ components:
     description: |
       CNPG Operator
     type: git
-    git:
+    attributes:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
       branch: main
       path: cnpg
@@ -38,7 +38,7 @@ components:
     description: |
       Prometheus operator, instance and node exporter.
     type: git
-    git:
+    attributes:
       repo: git@github.com:spikebaylor/vulcan-catalog.git
       branch: main
       path: prometheus
