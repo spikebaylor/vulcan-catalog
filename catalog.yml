@@ -1,4 +1,4 @@
-name: dev-catalog
+name: vulcan
 components:
   - name: grafana
     description: |
