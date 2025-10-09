@@ -1,4 +1,4 @@
-name: vulcan-catalog
+name: dev-catalog
 components:
   - name: grafana
     description: |
@@ -7,38 +7,46 @@ components:
       system and application metrics.
     type: git
     attributes:
-      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
-      path: grafana
+      rootPath: grafana
   - name: nginx
     description: |
       NGINX Ingress Controller
     type: git
     attributes:
-      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
-      path: nginx
+      rootPath: nginx
   - name: minio
     description: |
       Minio Operator
     type: git
     attributes:
-      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
-      path: minio
+      rootPath: minio
   - name: cnpg
     description: |
       CNPG Operator
     type: git
     attributes:
-      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
-      path: cnpg
+      rootPath: cnpg
   - name: prometheus
     description: |
       Prometheus operator, instance and node exporter.
     type: git
     attributes:
-      repo: git@github.com:spikebaylor/vulcan-catalog.git
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
-      path: prometheus
+      rootPath: prometheus
+  - name: nessie
+    description: |
+      Nessie.
+    type: git
+    attributes:
+      repo: https://github.com/spikebaylor/vulcan-catalog.git
+      branch: main
+      rootPath: nessie
