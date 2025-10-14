@@ -1,4 +1,5 @@
 name: vulcan
+description: A Remote Development Catalog for Common Applications
 components:
   - name: grafana
     description: |
