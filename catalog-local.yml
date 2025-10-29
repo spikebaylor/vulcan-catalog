@@ -1,0 +1,35 @@
+name: vulcan-local
+description: A Remote Development Catalog for Common Applications
+components:
+  - name: grafana
+    description: |
+      Grafana is an open-source visualization and analytics platform for monitoring time-series data from sources like 
+      Prometheus, InfluxDB, and Elasticsearch. It enables users to create interactive dashboards and alerts for observing 
+      system and application metrics.
+    type: localpath
+    attributes:
+      path: /home/dprice/dev/tf/sandbox/vulcan-catalog/grafana
+  - name: nginx
+    description: |
+      NGINX Ingress Controller
+    type: localpath
+    attributes:
+      path: /home/dprice/dev/tf/sandbox/vulcan-catalog/nginx
+  - name: minio
+    description: |
+      Minio
+    type: localpath
+    attributes:
+      path: /home/dprice/dev/tf/sandbox/vulcan-catalog/minio
+  - name: cnpg
+    description: |
+      CNPG Operator
+    type: localpath
+    attributes:
+      path: /home/dprice/dev/tf/sandbox/vulcan-catalog/cnpg
+  - name: prometheus
+    description: |
+      Prometheus operator, instance and node exporter.
+    type: localpath
+    attributes:
+      path: /home/dprice/dev/tf/sandbox/vulcan-catalog/prometheus

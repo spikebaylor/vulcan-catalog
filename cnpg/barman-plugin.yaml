@@ -937,8 +937,9 @@ spec:
                 secretKeyRef:
                   key: SIDECAR_IMAGE
                   name: plugin-barman-cloud-hkg64h25m2
-          image: ghcr.io/cloudnative-pg/plugin-barman-cloud:v0.6.0
+          image: harbor.cesiworks.com/ghcr.io/cloudnative-pg/plugin-barman-cloud:v0.6.0
           name: barman-cloud
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9090
               protocol: TCP
@@ -975,49 +976,49 @@ spec:
         - name: client
           secret:
             secretName: barman-cloud-client-tls
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: barman-cloud-client
-  namespace: cnpg-system
-spec:
-  commonName: barman-cloud-client
-  duration: 2160h
-  isCA: false
-  issuerRef:
-    group: cert-manager.io
-    kind: Issuer
-    name: selfsigned-issuer
-  renewBefore: 360h
-  secretName: barman-cloud-client-tls
-  usages:
-    - client auth
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: barman-cloud-server
-  namespace: cnpg-system
-spec:
-  commonName: barman-cloud
-  dnsNames:
-    - barman-cloud
-  duration: 2160h
-  isCA: false
-  issuerRef:
-    group: cert-manager.io
-    kind: Issuer
-    name: selfsigned-issuer
-  renewBefore: 360h
-  secretName: barman-cloud-server-tls
-  usages:
-    - server auth
----
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: selfsigned-issuer
-  namespace: cnpg-system
-spec:
-  selfSigned: {}
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+#  name: barman-cloud-client
+#  namespace: cnpg-system
+#spec:
+#  commonName: barman-cloud-client
+#  duration: 2160h
+#  isCA: false
+#  issuerRef:
+#    group: cert-manager.io
+#    kind: Issuer
+#    name: selfsigned-issuer
+#  renewBefore: 360h
+#  secretName: barman-cloud-client-tls
+#  usages:
+#    - client auth
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+#  name: barman-cloud-server
+#  namespace: cnpg-system
+#spec:
+#  commonName: barman-cloud
+#  dnsNames:
+#    - barman-cloud
+#  duration: 2160h
+#  isCA: false
+#  issuerRef:
+#    group: cert-manager.io
+#    kind: Issuer
+#    name: selfsigned-issuer
+#  renewBefore: 360h
+#  secretName: barman-cloud-server-tls
+#  usages:
+#    - server auth
+#---
+#apiVersion: cert-manager.io/v1
+#kind: Issuer
+#metadata:
+#  name: selfsigned-issuer
+#  namespace: cnpg-system
+#spec:
+#  selfSigned: {}

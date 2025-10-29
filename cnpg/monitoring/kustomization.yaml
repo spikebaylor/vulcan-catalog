@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - podmonitor.cnpg.yaml
+  - podmonitor.clusters.yaml
+
+configMapGenerator:
+  - name: cnpg-dashboard
+    namespace: telemetry
+    files:
+      - cnpg-dashboard.json
+    options:
+      labels:
+        grafana_dashboard: "1"
+      disableNameSuffixHash: true
+      annotations:
+        k8s-sidecar-target-directory: platform/
+

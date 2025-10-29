@@ -3,4 +3,7 @@ kind: Kustomization
 
 resources:
   - operator.yaml
-  #- barman-plugin.yaml
+  - barman-plugin.yaml
+  - barman-cloud-client-tls.yaml
+  - barman-cloud-server-tls.yaml
+  - ./monitoring
