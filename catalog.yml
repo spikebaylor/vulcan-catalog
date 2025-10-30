@@ -43,11 +43,3 @@ components:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: prometheus
-  - name: nessie
-    description: |
-      Nessie.
-    type: git
-    attributes:
-      repo: https://github.com/spikebaylor/vulcan-catalog.git
-      branch: main
-      rootPath: nessie

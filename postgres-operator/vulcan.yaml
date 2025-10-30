@@ -1,8 +1,0 @@
-name: Zalan.do Postgres Operator
-description: |
-  The Zalando Postgres Operator is an open-source Kubernetes operator for managing PostgreSQL clusters. It automates 
-  tasks like provisioning, scaling, failover, and backups, enabling highly available and production-grade Postgres 
-  deployments. Built by Zalando, it’s widely used for running stateful databases in cloud-native environments.
-scripts:
-  pre-install: install.sh
-  scriptsOnly: true

@@ -1,3 +1,0 @@
-name: Nessie
-description: |
-  Nessie Iceberg Catalog with Minio Tenant and CNPG backged Postgres Database.  Requires Minio, CNPG and Nginx
