@@ -1,4 +1,5 @@
-name: CNPG
+name: cnpg
+display: CNPG Operator
 description: |
   CNPG (Cloud Native Postgres) Operator
 images:

@@ -1,4 +1,5 @@
-name: Minio
+name: minio
+display: MinIO
 description: |
   MINIO Operator
 images:

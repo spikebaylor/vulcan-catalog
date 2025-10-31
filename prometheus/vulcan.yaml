@@ -1,4 +1,5 @@
-name: Prometheus
+name: prometheus
+display: Prometheus Operator and Instance
 description: |
   Prometheus is an open-source systems monitoring and alerting toolkit designed for reliability and scalability. It 
   collects metrics from applications and infrastructure, stores them in a time-series database, and allows powerful 

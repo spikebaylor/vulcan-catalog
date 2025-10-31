@@ -1,4 +1,5 @@
-name: Nginx
+name: nginx
+display: NGINX
 description: |
   NGINX Ingress Controller
 images:
