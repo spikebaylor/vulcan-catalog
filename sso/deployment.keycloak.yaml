@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: keycloak
+  labels:
+    app.kubernetes.io/name: keycloak
+    app.kubernetes.io/instance: keycloak
+    app.kubernetes.io/component: server
+    app.kubernetes.io/version: 26.0.1
+    app.kubernetes.io/part-of: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: keycloak
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: keycloak
+        app.kubernetes.io/instance: keycloak
+        app.kubernetes.io/component: server
+        app.kubernetes.io/version: 26.0.1
+        app.kubernetes.io/part-of: keycloak
+    spec:
+      serviceAccountName: keycloak
+      hostAliases:
+        - ip: "172.17.0.1"
+          hostnames:
+            - "idm.local.kube"
+      initContainers:
+        # === LOAD REALMS SIDECAR ===
+        - name: load-realms
+          image: harbor.cesiworks.com/cesi_dev/common/k8s-sidecar:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: LABEL
+              value: keycloak-realm
+            - name: FOLDER
+              value: /realms
+            - name: RESOURCE
+              value: configmap
+            - name: METHOD
+              value: LIST
+            - name: NAMESPACE
+              value: ALL
+          volumeMounts:
+            - name: realm-volume
+              mountPath: /realms
+      containers:
+        - name: keycloak
+          image: harbor.cesiworks.com/quay.io/keycloak/keycloak:26.0.1
+          args: ["start-dev", "--import-realm"]
+          env:
+            - name: KEYCLOAK_ADMIN
+              value: "admin"
+            - name: KEYCLOAK_ADMIN_PASSWORD
+              value: "admin"
+            - name: KC_PROXY
+              value: "edge"
+          ports:
+            - name: http
+              containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /realms/master
+              port: 8080
+          volumeMounts:
+            - name: realm-volume
+              mountPath: /opt/keycloak/data/import/
+      volumes:
+        - name: realm-volume
+          emptyDir: { }
