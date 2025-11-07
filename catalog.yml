@@ -3,84 +3,84 @@ description: A Remote Development Catalog for Common Applications
 components:
   - name: grafana
     summary: Metrics Visualization Tool
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: grafana
   - name: prometheus
     summary: Prometheus Operator and Instance
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: prometheus
   - name: nginx
     summary: NGINX Ingress Controller
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: nginx
   - name: minio
     summary: MinIO Operator
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: minio
   - name: cnpg
     summary: CNPG (Cloud Native Postgres) Operator
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: cnpg
   - name: sso
     summary: Keycloak used for SSO
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: sso
   - name: chaos
     summary: Chaos Mesh
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: chaos
   - name: elk
     summary: ELK (Elastic, Kibana and Filebeats) Stack
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: elk
   - name: mongo
     summary: Mongo Operator
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: mongo
   - name: networktool
     summary: Network Tools for Debugging
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: networktool
   - name: portainer
     summary: Portainer
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
       rootPath: portainer
   - name: zalando
     summary: Zalan.do Postgres Operator
-    type: localpath
+    type: git
     attributes:
       repo: https://github.com/spikebaylor/vulcan-catalog.git
       branch: main
