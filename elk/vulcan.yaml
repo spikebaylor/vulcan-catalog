@@ -1,0 +1,6 @@
+name: elk
+display: ELK (Elastic, Kibana and Filebeats) Stack
+scripts:
+  pre-install: installOperator.sh
+  post-install: showCredentials.sh
+

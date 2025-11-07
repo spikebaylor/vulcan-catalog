@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: network-tool
+  namespace: networktool
+  labels:
+    app.kubernetes.io/name: network-tool
+    app.kubernetes.io/instance: network-tool
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: local-kube-core
+spec:
+  serviceAccountName: network-tool
+  containers:
+  - name: networktool
+    image: harbor.cesiworks.com/docker.io/wbitt/network-multitool:extra
+    imagePullPolicy: IfNotPresent
+    resources:
+      requests:
+        cpu: 500m
+        memory: 500Mi
+      limits:
+        cpu: 500m
+        memory: 500Mi
+    ports:
+    - name: http
+      containerPort: 80
+      protocol: TCP
+    - name: https
+      containerPort: 443
+      protocol: TCP

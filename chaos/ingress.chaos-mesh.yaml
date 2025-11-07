@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chaos-mesh
+  namespace: chaos-mesh
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "500m"
+  labels:
+    app.kubernetes.io/name: chaos-mesh
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: chaos-mesh
+    app.kubernetes.io/version: 2.7.3
+    app.kubernetes.io/component: chaos-dashboard
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "chaos.local.kube"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: chaos-dashboard
+                port:
+                  number: 2333

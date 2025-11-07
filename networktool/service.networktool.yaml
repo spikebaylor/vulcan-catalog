@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: network-tool
+    app.kubernetes.io/instance: network-tool
+    app.kubernetes.io/component: server
+    app.kubernetes.io/part-of: local-kube-core
+  name: network-tool
+  namespace: networktool
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: network-tool
+  ports:
+  - name: http
+    port: 8080
+    targetPort: http
+    protocol: TCP

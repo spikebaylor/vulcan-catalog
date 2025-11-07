@@ -1,0 +1,8 @@
+name: mongo
+display: Mongo Operator
+summary: Mongo Operator
+images:
+  - harbor.cesiworks.com/docker.io/percona/percona-server-mongodb-operator:1.17.0
+scripts:
+  server-side: true
+  post-install: wait.sh

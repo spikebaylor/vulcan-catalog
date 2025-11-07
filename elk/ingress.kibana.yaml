@@ -1,0 +1,31 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kibana
+  namespace: elk
+  labels:
+    app.kubernetes.io/name: kibana
+    app.kubernetes.io/instance: kibana
+    app.kubernetes.io/version: "8.12.2"
+    app.kubernetes.io/component: visual
+    app.kubernetes.io/part-of: ELK
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - kibana.local.kube
+      secretName: kibana-kb-http-certs-public
+  rules:
+    - host: kibana.local.kube
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kibana-kb-http
+                port:
+                  name: https

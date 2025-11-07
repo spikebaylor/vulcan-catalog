@@ -1,0 +1,8 @@
+name: zalando
+display: Zalan.do Postgres Operator
+summary: Zalan.do Postgres Operator
+images:
+  - registry.opensource.zalan.do/acid/postgres-operator:v1.12.2
+scripts:
+  scripts-only: true
+  pre-install: install.sh

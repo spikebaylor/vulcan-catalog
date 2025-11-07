@@ -2,6 +2,6 @@ name: minio
 display: MinIO Operator
 summary: MinIO Operator
 images:
-  - minio/operator:v7.1.1
+  - harbor.cesiworks.com/quay.io/minio/minio:latest
 scripts:
   post-install: wait.sh

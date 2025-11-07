@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mongo-operator
+
+resources:
+- crd.mongoOperator.yaml
+- rbac.mongoOperator.yaml
+- deployment.mongoOperator.yaml
+- namespace.mongo.yaml
+

@@ -1,0 +1,21 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: kibana
+  namespace: elk
+  labels:
+    app.kubernetes.io/name: kibana
+    app.kubernetes.io/instance: kibana
+    app.kubernetes.io/version: "8.12.2"
+    app.kubernetes.io/component: visual
+    app.kubernetes.io/part-of: ELK
+spec:
+  version: 8.12.2
+  count: 1
+  elasticsearchRef:
+    name: elasticsearch
+  http:
+    tls:
+      selfSignedCertificate:
+        subjectAltNames:
+          - dns: kibana.local.kube

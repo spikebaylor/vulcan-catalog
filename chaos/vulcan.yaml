@@ -1,0 +1,14 @@
+name: chaos
+display: Chaos Mesh
+long-description: |
+  Chaos Mesh brings various types of fault simulation to Kubernetes and has an enormous capability to orchestrate fault 
+  scenarios. It helps you conveniently simulate various abnormalities that might occur in reality during the 
+  development, testing, and production environments and find potential problems in the system.
+  
+  See https://chaos-mesh.org/ for more information
+images:
+  - harbor.cesiworks.com/ghcr.io/chaos-mesh/chaos-daemon:v2.7.2
+  - harbor.cesiworks.com/ghcr.io/chaos-mesh/chaos-dashboard:v2.7.2
+  - harbor.cesiworks.com/ghcr.io/chaos-mesh/chaos-mesh:v2.7.2
+  - harbor.cesiworks.com/ghcr.io/chaos-mesh/chaos-coredns:v0.2.6
+

@@ -1,0 +1,4 @@
+name: portainer
+display: Portainer
+images:
+  - harbor.cesiworks.com/docker.io/portainer/portainer-ce:2.21.4
