@@ -1,7 +1,6 @@
 name: nginx
-display: NGINX
-description: |
-  NGINX Ingress Controller
+display: NGINX Ingress Controller
+summary: NGINX Ingress Controller
 images:
   - registry.k8s.io/ingress-nginx/controller:v1.11.8
   - registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.4

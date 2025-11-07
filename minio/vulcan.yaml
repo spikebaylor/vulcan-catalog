@@ -1,7 +1,6 @@
 name: minio
-display: MinIO
-description: |
-  MINIO Operator
+display: MinIO Operator
+summary: MinIO Operator
 images:
   - minio/operator:v7.1.1
 scripts:

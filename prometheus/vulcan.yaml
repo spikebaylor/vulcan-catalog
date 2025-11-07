@@ -1,6 +1,7 @@
 name: prometheus
 display: Prometheus Operator and Instance
-description: |
+summary: Prometheus Operator and Instance
+long-description: |
   Prometheus is an open-source systems monitoring and alerting toolkit designed for reliability and scalability. It 
   collects metrics from applications and infrastructure, stores them in a time-series database, and allows powerful 
   querying and visualization. Often paired with Grafana, it’s widely used for observing cloud-native and Kubernetes 

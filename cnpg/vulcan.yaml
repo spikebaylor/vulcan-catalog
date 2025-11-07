@@ -1,7 +1,6 @@
 name: cnpg
 display: CNPG Operator
-description: |
-  CNPG (Cloud Native Postgres) Operator
+summary: CNPG (Cloud Native Postgres) Operator
 images:
   - ghcr.io/cloudnative-pg/cloudnative-pg:1.27.0
 scripts:

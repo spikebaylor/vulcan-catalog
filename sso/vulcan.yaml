@@ -1,7 +1,6 @@
 name: sso
 display: Keycloak SSO
-description: |
-  Keycloak used for SSO
+summary: Keycloak used for SSO
 images:
   - harbor.cesiworks.com/cesi_dev/common/k8s-sidecar:latest
   - harbor.cesiworks.com/quay.io/keycloak/keycloak:26.0.1
